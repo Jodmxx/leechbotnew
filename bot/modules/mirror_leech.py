@@ -219,7 +219,7 @@ async def _mirror_leech(client, message, isQbit=False, isLeech=False, sameDir=No
     if task_utilis_msg:
         error_msg.extend(task_utilis_msg)
     if error_msg:
-        final_msg = f'Hey, <b>{tag}</b>!\n'
+        final_msg = f'Heybc, <b>{tag}</b>!\n'
         for __i, __msg in enumerate(error_msg, 1):
             final_msg += f'\n<b>{__i}</b>: {__msg}\n'
         if error_button is not None:
