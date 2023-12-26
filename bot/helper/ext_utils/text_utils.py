@@ -66,5 +66,4 @@ uset_display_dict = {
             }
 
 nsfw_keywords = [
-    "Brazzers",
 ]
