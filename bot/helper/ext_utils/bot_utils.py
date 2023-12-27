@@ -181,7 +181,7 @@ def get_readable_message():
             if hasattr(download, 'playList'):
                 try:
                     if playlist:=download.playList():
-                        msg += f"\n⌑ <code>YtList </code>: {playlist}"
+                        msg += f"\nYtList: {playlist}"
                 except:
                     pass
             if hasattr(download, 'seeders_num'):
