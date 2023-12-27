@@ -66,7 +66,7 @@ class YtSelection:
         self.__is_m4a       = False
         self.__reply_to     = None
         self.__time         = time()
-        self.__timeout      = 120
+        self.__timeout      = 300
         self.__is_playlist  = False
         self.is_cancelled   = False
         self.__main_buttons = None
