@@ -178,13 +178,13 @@ def get_readable_message():
             msg += f"\n{download.processed_bytes()} of {download.size()}"
             msg += f"\nSpeed: {download.speed()}"
             msg += f'\nEstimated: {download.eta()}'
-             if hasattr(download, 'playList'):
+            if hasattr(download, 'playList'):
                 try:
                     if playlist:=download.playList():
                         msg += f"\n⌑ <code>YtList </code>: {playlist}"
                 except:
                     pass
-             if hasattr(download, 'seeders_num'):
+            if hasattr(download, 'seeders_num'):
                 try:
                     msg += f"\nSeeders: {download.seeders_num()} | Leechers: {download.leechers_num()}"
                 except:
