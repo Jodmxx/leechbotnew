@@ -8,8 +8,7 @@ class YtDlpDownloadStatus:
         self.__gid = gid
         self.message = listener.message
         self.__isPlayList = self.__obj.is_playlist
-        self.extra_details = self.__listener.extra_details
-       
+        
     def playList(self):
         if self.__isPlayList:
             return f"{self.__obj.playlist_index} of {self.__obj.playlist_count}"
