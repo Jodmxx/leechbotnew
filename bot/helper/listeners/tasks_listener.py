@@ -62,8 +62,7 @@ class MirrorLeechListener:
         self.drive_id = drive_id
         self.index_link = index_link
         self.leech_utils = leech_utils
-        self.__source()
-
+        
     async def clean(self):
         try:
             async with status_reply_dict_lock:
@@ -75,27 +74,11 @@ class MirrorLeechListener:
         except:
             pass
 
-    def __source(self):
-        if sender_chat := self.message.sender_chat:
-            source = sender_chat.title
-        else:
-            source = self.message.from_user.username or self.message.from_user.id
-        if reply_to := self.message.reply_to_message:
-            if sender_chat := reply_to.sender_chat:
-                source = reply_to.sender_chat.title
-            elif not reply_to.from_user.is_bot:
-                source = reply_to.from_user.username or reply_to.from_user.id
-        if self.isSuperGroup:
-            self.extra_details['source'] = f"<a href='{self.message.link}'>{source}</a>"
-        else:
-            self.extra_details['source'] = f"<i>{source}</i>"
-
     async def onDownloadStart(self):
         if config_dict['LEECH_LOG_ID']:
             msg = f'<b>Task Started</b>\n\n'
             msg += f'<b>• Task by:</b> {self.tag}\n'
-            msg += f'<b>• User ID: </b><code>{self.message.from_user.id}</code>/n'
-            msg += f'<b>• User ID: </b>{source}'
+            msg += f'<b>• User ID: </b><code>{self.message.from_user.id}</code>'            
             self.linkslogmsg = await sendCustomMsg(config_dict['LEECH_LOG_ID'], msg)
         user_dict = user_data.get(self.message.from_user.id, {})
         self.botpmmsg = await sendCustomMsg(self.message.from_user.id, '<b>Task started</b>')
